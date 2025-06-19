@@ -8,6 +8,28 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 ### Install Active Directory
 —
 ### Login to DC-1 and install Active Directory Domain Services
+![step1](https://github.com/user-attachments/assets/7a6b613f-2224-4db2-b4bd-ff9f9141c71e)
+
+![step2](https://github.com/user-attachments/assets/587c653a-f892-44a3-b310-5d17fda28f0d)
+
+![step3](https://github.com/user-attachments/assets/0d2ce55b-93e0-4292-8d5b-353f03491f2e)
+
+![step4](https://github.com/user-attachments/assets/00ae2f55-8d56-4f0a-84d7-142b1ebdd4ac)
+
+![step5](https://github.com/user-attachments/assets/f3ac00b1-8044-42cd-b62e-4cfc50552360)
+
+![step6](https://github.com/user-attachments/assets/f840f029-6107-40c1-a2dd-7b342905d37a)
+
+![step7](https://github.com/user-attachments/assets/52efddf1-bd31-4664-b9ca-40329f73c32c)
+
+![step8](https://github.com/user-attachments/assets/1379b497-c0b4-416d-8989-6ffae22e043c)
+
+![step9](https://github.com/user-attachments/assets/b7349ad3-9e9a-45fa-9e38-ff954ed65e16)
+
+![step10](https://github.com/user-attachments/assets/94456de6-c918-49f6-b70d-92badcd59a3d)
+
+![step11](https://github.com/user-attachments/assets/22906f29-4d07-432d-b107-65fa7d48eda9)
+
 ### Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)
 ### Restart and then log back into DC-1 as user: mydomain.com\labuser
 
