@@ -117,7 +117,6 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 
 ![stpe34](https://github.com/user-attachments/assets/f9b3e30b-20bf-4a90-b7da-708bedb97474)
 
-Part 2
 
 ### Turn on the DC-1 and Client-1 VMs in the Azure Portal if they are off.
 ### Setup Remote Desktop for non-administrative users on Client-1
