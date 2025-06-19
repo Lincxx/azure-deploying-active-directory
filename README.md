@@ -128,7 +128,6 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 ### You can now log into Client-1 as a normal, non-administrative user now
 ### Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab)
 
-
 ### Create a bunch of additional users and attempt to log into client-1 with one of the users
 —
 ### Login to DC-1 as jane_admin
