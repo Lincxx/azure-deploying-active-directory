@@ -117,27 +117,26 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 
 ![stpe34](https://github.com/user-attachments/assets/f9b3e30b-20bf-4a90-b7da-708bedb97474)
 
-Part 2
 
-Turn on the DC-1 and Client-1 VMs in the Azure Portal if they are off.
-Setup Remote Desktop for non-administrative users on Client-1
+### Turn on the DC-1 and Client-1 VMs in the Azure Portal if they are off.
+### Setup Remote Desktop for non-administrative users on Client-1
 —
-Log into Client-1 as mydomain.com\jane_admin
-Open system properties
-Click “Remote Desktop”
-Allow “domain users” access to remote desktop
-You can now log into Client-1 as a normal, non-administrative user now
-Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab)
+### Log into Client-1 as mydomain.com\jane_admin
+### Open system properties
+### Click “Remote Desktop”
+### Allow “domain users” access to remote desktop
+### You can now log into Client-1 as a normal, non-administrative user now
+### Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab)
 
 
-Create a bunch of additional users and attempt to log into client-1 with one of the users
+### Create a bunch of additional users and attempt to log into client-1 with one of the users
 —
-Login to DC-1 as jane_admin
-Open PowerShell_ise as an administrator
-Create a new File and paste the contents of the script into it
+### Login to DC-1 as jane_admin
+### Open PowerShell_ise as an administrator
+### Create a new File and paste the contents of the script into it
 [Generate-Names-Create-Users](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
  
-Run the script and observe the accounts being created
-When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
-attempt to log into Client-1 with one of the accounts (take note of the password in the script)
+### Run the script and observe the accounts being created
+### When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
+### attempt to log into Client-1 with one of the accounts (take note of the password in the script)
 
