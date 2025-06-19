@@ -59,23 +59,63 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 
 —
 ### In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”
+
+![step21](https://github.com/user-attachments/assets/46c9ef83-b71f-4ac8-853f-ed7e39218653)
+
+![step22](https://github.com/user-attachments/assets/fa303e5b-259e-4a18-be13-ac0ba1fa57d7)
+
+
+
 ### Create a new OU named “_ADMINS”
+### Repeat the same steps up above
+
+
 ### Create a new employee named “Jane Doe” (same password) with the username of “jane_admin” / Cyberlab123!
+
+![step24](https://github.com/user-attachments/assets/f3dcb5db-eb83-4787-b0d3-cd0b78f764e0)
+
+![step25](https://github.com/user-attachments/assets/9ad127e4-313f-4670-8099-0e3a9dbcc005)
+
+![step26](https://github.com/user-attachments/assets/24a582c5-d387-4fcf-93e0-0c1349a0f5c6)
+
+![step27](https://github.com/user-attachments/assets/5150454d-0f75-47c2-b210-984cdb36d86a)
+
 #### Add jane_admin to the “Domain Admins” Security Group
+
+![step28](https://github.com/user-attachments/assets/898f5439-3ef4-4d87-9671-3d87b5afcea5)
+
+![step29](https://github.com/user-attachments/assets/dbaa9de7-1baf-43d0-8635-b8c6ca9aa06d)
+
 ### Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”
+
 ### User jane_admin as your admin account from now on
 
 
 ### Join Client-1 to your domain (mydomain.com)
 —
-From the Azure Portal, set Client-1’s DNS settings to the DC’s Private IP address (Already done)
-From the Azure Portal, restart Client-1 (Already done)
-Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)
-Login to the Domain Controller and verify Client-1 shows up in ADUC
-Create a new OU named “_CLIENTS” and drag Client-1 into there
+### From the Azure Portal, set Client-1’s DNS settings to the DC’s Private IP address (Already done)
+### From the Azure Portal, restart Client-1 (Already done)
 
-Finish the lab, but do not delete the VMs in Azure. We will use them for upcoming labs.
-If you are done for the day and want to save money, simply “Stop”/turn off the VMs within the Azure Portal
+### Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)
+
+![step30](https://github.com/user-attachments/assets/127fa2d7-0235-4718-ab4d-471fe1a9dca5)
+
+![step31](https://github.com/user-attachments/assets/24d75b80-a593-4d4d-9082-37217e058eb5)
+
+![step32](https://github.com/user-attachments/assets/fd711204-8e62-43ad-af34-edfadebfdc9c)
+
+![step33](https://github.com/user-attachments/assets/9e481c82-4173-4b34-bee3-90a99a0dc2e2)
+
+### Login to the Domain Controller and verify Client-1 shows up in ADUC
+### Create a new OU named “_CLIENTS” and drag Client-1 into there
+
+![step35](https://github.com/user-attachments/assets/ca7178a6-c328-4a31-ba0e-85166fd29bb2)
+
+![step36](https://github.com/user-attachments/assets/7fb047bb-7c9d-4c28-a952-e6d5336e20ee)
+
+![step37](https://github.com/user-attachments/assets/417b4b9b-9957-44a1-899d-29f04d7b9f06)
+
+![stpe34](https://github.com/user-attachments/assets/f9b3e30b-20bf-4a90-b7da-708bedb97474)
 
 Part 2
 
@@ -95,6 +135,54 @@ Create a bunch of additional users and attempt to log into client-1 with one of 
 Login to DC-1 as jane_admin
 Open PowerShell_ise as an administrator
 Create a new File and paste the contents of the script into it
+
+` # ----- Edit these Variables for your own Use Case ----- #
+$PASSWORD_FOR_USERS   = "Password1"
+$NUMBER_OF_ACCOUNTS_TO_CREATE = 10000
+# ------------------------------------------------------ #
+
+Function generate-random-name() {
+    $consonants = @('b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z')
+    $vowels = @('a','e','i','o','u','y')
+    $nameLength = Get-Random -Minimum 3 -Maximum 7
+    $count = 0
+    $name = ""
+
+    while ($count -lt $nameLength) {
+        if ($($count % 2) -eq 0) {
+            $name += $consonants[$(Get-Random -Minimum 0 -Maximum $($consonants.Count - 1))]
+        }
+        else {
+            $name += $vowels[$(Get-Random -Minimum 0 -Maximum $($vowels.Count - 1))]
+        }
+        $count++
+    }
+
+    return $name
+
+}
+
+$count = 1
+while ($count -lt $NUMBER_OF_ACCOUNTS_TO_CREATE) {
+    $fisrtName = generate-random-name
+    $lastName = generate-random-name
+    $username = $fisrtName + '.' + $lastName
+    $password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force
+
+    Write-Host "Creating user: $($username)" -BackgroundColor Black -ForegroundColor Cyan
+    
+    New-AdUser -AccountPassword $password `
+               -GivenName $firstName `
+               -Surname $lastName `
+               -DisplayName $username `
+               -Name $username `
+               -EmployeeID $username `
+               -PasswordNeverExpires $true `
+               -Path "ou=_EMPLOYEES,$(([ADSI]`"").distinguishedName)" `
+               -Enabled $true
+    $count++
+}
+`
 Run the script and observe the accounts being created
 When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
 attempt to log into Client-1 with one of the accounts (take note of the password in the script)
