@@ -31,9 +31,32 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 ![step11](https://github.com/user-attachments/assets/22906f29-4d07-432d-b107-65fa7d48eda9)
 
 ### Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)
+
+![step11](https://github.com/user-attachments/assets/93594da9-1f71-407f-9952-61e8457129ee)
+
+
 ### Restart and then log back into DC-1 as user: mydomain.com\labuser
 
+
 ### Create a Domain Admin user within the domain
+![step12](https://github.com/user-attachments/assets/29691f8c-840c-491c-bd55-10dc21b4fc32)
+
+![step13](https://github.com/user-attachments/assets/34d44ec3-43bb-4b5f-8180-a07557534be6)
+
+![step14](https://github.com/user-attachments/assets/974db0fa-a10c-42ed-88c9-8ff0af287b28)
+
+![step15](https://github.com/user-attachments/assets/53f269d0-7d7e-4107-abaf-59c11f3080fc)
+
+![step16](https://github.com/user-attachments/assets/6b1dbd16-4196-4b5c-b1f4-c4668035702a)
+
+![step17](https://github.com/user-attachments/assets/21504901-8490-4ee3-a6a0-f7df6983eda3)
+
+![step18](https://github.com/user-attachments/assets/47975957-29a0-4ebc-a174-97a5f4dea48b)
+
+![step19](https://github.com/user-attachments/assets/4996326d-a737-4a1c-b74a-eb6f736885c6)
+
+![step20](https://github.com/user-attachments/assets/c635565d-474f-48c3-aa55-b86aa0021555)
+
 —
 ### In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”
 ### Create a new OU named “_ADMINS”
