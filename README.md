@@ -124,7 +124,17 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 ### Log into Client-1 as mydomain.com\jane_admin
 ### Open system properties
 ### Click “Remote Desktop”
+
+![step1](https://github.com/user-attachments/assets/3441028e-25c8-4f7c-88e4-e79a8f9d12ee)
+
+![step2](https://github.com/user-attachments/assets/4dea530f-4f8c-421e-9a10-917df7481eed)
+
 ### Allow “domain users” access to remote desktop
+
+![step3](https://github.com/user-attachments/assets/758c8412-2ca5-42b1-9b11-202eecaa4b50)
+
+![step4](https://github.com/user-attachments/assets/9c57f6a9-9631-46e8-98a6-c9871ab2cb8b)
+
 ### You can now log into Client-1 as a normal, non-administrative user now
 ### Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab)
 
