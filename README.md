@@ -144,8 +144,13 @@ From we are going to setup an Organizational Unit (OU) called "_EMPLOYEES" and "
 ### Open PowerShell_ise as an administrator
 ### Create a new File and paste the contents of the script into it
 [Generate-Names-Create-Users](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
- 
+
+![step6](https://github.com/user-attachments/assets/06620e95-a43b-4652-a395-86eff862393c)
+
+![step7](https://github.com/user-attachments/assets/98bdc867-a186-4479-a227-d709f1541559)
+
 ### Run the script and observe the accounts being created
 ### When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
 ### attempt to log into Client-1 with one of the accounts (take note of the password in the script)
 
+![step8](https://github.com/user-attachments/assets/543304ab-84e4-41bf-ae03-b9b61af648fb)
